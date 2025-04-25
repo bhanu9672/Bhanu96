@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects Tab Section</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff;
+    }
+
+    section#projects {
+      background-color: #f9f9f9;
+      padding: 60px 20px;
+    }
+
+    section#projects h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #c90000;
+      font-size: 36px;
+    }
+
+    .tab-btn {
+      padding: 10px 25px;
+      margin: 0 10px 20px;
+      border: none;
+      background-color: #c90000;
+      color: white;
+      font-size: 16px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .tab-btn:hover,
+    .tab-btn.active {
+      background-color: #a00000;
+    }
+
+    .tab-content {
+      display: none;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      padding: 20px 0;
+    }
+
+    .tab-content.active {
+      display: grid;
+    }
+
+    .project-card {
+      background-color: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-card h3 {
+      margin-top: 0;
+      color: #333;
+    }
+
+    .project-card p {
+      color: #555;
+    }
+
+    .project-card a {
+      display: inline-block;
+      margin-top: 10px;
+      color: #c90000;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .project-card a:hover {
+      text-decoration: underline;
+    }
+
+    .tabs-container {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>My Projects</h2>
+
+    <div class="tabs-container">
+      <button class="tab-btn active" onclick="showTab('all', this)">All</button>
+      <button class="tab-btn" onclick="showTab('themes', this)">Themes</button>
+      <button class="tab-btn" onclick="showTab('plugins', this)">Plugins</button>
+      <button class="tab-btn" onclick="showTab('custom', this)">Custom Projects</button>
+    </div>
+
+    <!-- All Projects Tab (default on page load) -->
+    <div id="all" class="tab-content active">
+      <div class="project-card">
+        <h3>Markito Theme</h3>
+        <p>A responsive WordPress theme for e-commerce stores using WooCommerce.</p>
+        <a href="https://wordpress.org/themes/markito/" target="_blank">View Project</a>
+      </div>
+      <div class="project-card">
+        <h3>Tripify Theme</h3>
+        <p>Designed for travel blogs and agencies with seamless booking integration.</p>
+        <a href="https://wordpress.org/themes/tripify/" target="_blank">View Project</a>
+      </div>
+      <div class="project-card">
+        <h3>Custom Booking Plugin</h3>
+        <p>Developed a WooCommerce extension for tour booking with date selection.</p>
+        <a href="#">View Plugin</a>
+      </div>
+      <div class="project-card">
+        <h3>Real Estate Website</h3>
+        <p>Custom WordPress site with ACF, AJAX filtering, and property CPT.</p>
+        <a href="#">View Project</a>
+      </div>
+      <div class="project-card">
+        <h3>Portfolio Website</h3>
+        <p>Personal portfolio using custom theme development with contact form.</p>
+        <a href="#">View Project</a>
+      </div>
+      <div class="project-card">
+        <h3>Event Management System</h3>
+        <p>A custom plugin developed for managing events, bookings, and payments.</p>
+        <a href="#">View Project</a>
+      </div>
+    </div>
+
+    <!-- Themes Tab -->
+    <div id="themes" class="tab-content">
+      <div class="project-card">
+        <h3>Markito Theme</h3>
+        <p>A responsive WordPress theme for e-commerce stores using WooCommerce.</p>
+        <a href="https://wordpress.org/themes/markito/" target="_blank">View Project</a>
+      </div>
+      <div class="project-card">
+        <h3>Tripify Theme</h3>
+        <p>Designed for travel blogs and agencies with seamless booking integration.</p>
+        <a href="https://wordpress.org/themes/tripify/" target="_blank">View Project</a>
+      </div>
+    </div>
+
+    <!-- Plugins Tab -->
+    <div id="plugins" class="tab-content">
+      <div class="project-card">
+        <h3>Custom Booking Plugin</h3>
+        <p>Developed a WooCommerce extension for tour booking with date selection.</p>
+        <a href="#">View Plugin</a>
+      </div>
+    </div>
+
+    <!-- Custom Projects Tab -->
+    <div id="custom" class="tab-content">
+      <div class="project-card">
+        <h3>Real Estate Website</h3>
+        <p>Custom WordPress site with ACF, AJAX filtering, and property CPT.</p>
+        <a href="#">View Project</a>
+      </div>
+      <div class="project-card">
+        <h3>Portfolio Website</h3>
+        <p>Personal portfolio using custom theme development with contact form.</p>
+        <a href="#">View Project</a>
+      </div>
+      <div class="project-card">
+        <h3>Event Management System</h3>
+        <p>A custom plugin developed for managing events, bookings, and payments.</p>
+        <a href="#">View Project</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tabs Script -->
+  <script>
+    function showTab(tabId, btn) {
+      const tabs = document.querySelectorAll(".tab-content");
+      const buttons = document.querySelectorAll(".tab-btn");
+
+      tabs.forEach(tab => tab.classList.remove("active"));
+      buttons.forEach(button => button.classList.remove("active"));
+
+      document.getElementById(tabId).classList.add("active");
+      btn.classList.add("active");
+    }
+  </script>
+
+</body>
+</html>
