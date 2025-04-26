@@ -645,19 +645,7 @@
       </div>
     </div>
   </section>
-<!-- Tabs Script -->
-  <script>
-    function showTab(tabId, btn) {
-      const tabs = document.querySelectorAll(".tab-content");
-      const buttons = document.querySelectorAll(".tab-btn");
 
-      tabs.forEach(tab => tab.classList.remove("active"));
-      buttons.forEach(button => button.classList.remove("active"));
-
-      document.getElementById(tabId).classList.add("active");
-      btn.classList.add("active");
-    }
-  </script>
 
 
         
@@ -712,6 +700,17 @@
 </footer>
 
   <script>
+    <!-- Tabs Script -->
+    function showTab(tabId, btn) {
+      const tabs = document.querySelectorAll(".tab-content");
+      const buttons = document.querySelectorAll(".tab-btn");
+
+      tabs.forEach(tab => tab.classList.remove("active"));
+      buttons.forEach(button => button.classList.remove("active"));
+
+      document.getElementById(tabId).classList.add("active");
+      btn.classList.add("active");
+    }
     function toggleMenu() {
       document.querySelector('nav div').classList.toggle('active');
     }
