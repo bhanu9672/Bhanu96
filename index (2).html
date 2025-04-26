@@ -507,6 +507,12 @@
   <!-- Projects Section -->
 <section id="projects" style="background-color: #f9f9f9; padding: 60px;">
   <h2 style="text-align: center; margin-bottom: 30px; color: #c90000; font-size: 36px;">My Projects</h2>
+  <div class="tabs-container">
+      <button class="tab-btn active" onclick="showTab('all', this)">All</button>
+      <button class="tab-btn" onclick="showTab('themes', this)">Themes</button>
+      <button class="tab-btn" onclick="showTab('plugins', this)">Plugins</button>
+      <button class="tab-btn" onclick="showTab('custom', this)">Custom Projects</button>
+    </div>
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
     
     <!-- Project Card -->
