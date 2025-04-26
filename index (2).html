@@ -217,6 +217,109 @@
       background-color: #a00000;
     }
 
+
+  /* New Experience Section Styles */
+#experience {
+  background-color: #fff;
+  padding: 60px 10%;
+  box-sizing: border-box;
+}
+
+#experience h2 {
+  text-align: center;
+  margin-bottom: 50px;
+  color: #c90000;
+  font-size: 36px;
+  position: relative;
+}
+
+#experience > div {
+  position: relative;
+  margin: 0 auto;
+  padding-left: 30px;
+  border-left: 3px solid #c90000;
+}
+
+#experience > div::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background-color: #c90000;
+}
+
+#experience div > div {
+  background-color: #fff0f0;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  margin-bottom: 40px;
+  position: relative;
+  transition: transform 0.3s;
+}
+
+#experience div > div:hover {
+  transform: translateY(-5px);
+}
+
+#experience div > div::before {
+  content: '';
+  position: absolute;
+  left: -11px;
+  top: 20px;
+  width: 20px;
+  height: 20px;
+  background-color: #c90000;
+  border: 3px solid white;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+#experience div h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+#experience div p {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+#experience div ul {
+  padding-left: 20px;
+}
+
+#experience div ul li {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #experience > div {
+    padding-left: 20px;
+    border-left: 2px solid #c90000;
+  }
+  
+  #experience div > div {
+    padding: 15px 20px;
+  }
+
+  #experience div h3 {
+    font-size: 20px;
+  }
+
+  #experience div p, #experience div ul li {
+    font-size: 16px;
+  }
+}
+
+
     /* Experience Section */
     #experience div {
       margin-bottom: 40px;
